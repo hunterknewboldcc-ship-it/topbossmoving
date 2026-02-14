@@ -96,34 +96,20 @@
                     </div>
                 </div>
                 <div class="bg-brand-navy p-12 rounded-3xl shadow-strong border border-white/5">
-                    <form 
-  name="contact"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="thank-you.html"
-  class="space-y-6"
->
-    <!-- Honeypot field -->
-    <input type="text" name="bot-field" class="hidden">
-
-    <!-- Required Netlify form-name -->
-    <input type="hidden" name="form-name" value="contact">
-
-    <input type="text" name="name" placeholder="YOUR NAME" aria-label="Name"
-      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-
-    <input type="tel" name="phone" placeholder="PHONE NUMBER" aria-label="Phone"
-      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-
-    <textarea rows="4" name="details" placeholder="MOVE DETAILS (Date, Location, Items)" aria-label="Details"
-      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest"></textarea>
-
-    <button type="submit"
-      class="w-full bg-brand-gold text-brand-navy py-5 rounded-xl font-extrabold uppercase tracking-[0.2em] hover:bg-white transition shadow-2xl">
-      Request My Quote
-    </button>
-</form>
+                    <iframe
+                      id="JotFormIFrame-260446432956058"
+                      title="Contact Form"
+                      onload="window.parent.scrollTo(0,0)"
+                      allowtransparency="true"
+                      allow="geolocation; microphone; camera; fullscreen; payment"
+                      src="https://form.jotform.com/260446432956058"
+                      frameborder="0"
+                      style="min-width:100%;max-width:100%;height:539px;border:none;"
+                      scrolling="no"
+                    >
+                    </iframe>
+                    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260446432956058']", "https://form.jotform.com/")</script>
                 </div>
             </div>
         </section>
