@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Family-Owned Movers St. George | Top Boss Moving</title>
+    <meta name="description" content="Established in 2018, Top Boss Moving is a family-owned moving company serving Southern Utah with professional, background-checked movers.">
+    <!-- Include Tailwind & Lucide -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Use same config/styles as index.html -->
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0B2338', gold: '#C89A3A', orange: '#C86A26', cream: '#F5F0E6' } }, boxShadow: { 'strong': '0 16px 40px rgba(15, 23, 42, 0.14)' } } } }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F5F0E6; color: #1F2430; }
+        .image-placeholder { background: #e5e7eb; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .loading-spinner { border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top: 3px solid #C89A3A; width: 24px; height: 24px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="text-neutral-900">
+    
+    <!-- NAVIGATION (Use same code as other files) -->
+    <nav class="sticky top-0 z-50 bg-brand-navy shadow-md">
+         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center cursor-pointer">
+                    <div class="bg-brand-gold p-2 rounded-lg mr-2"><i data-lucide="truck" class="text-brand-navy w-6 h-6"></i></div>
+                    <div><span class="text-xl font-bold text-white block leading-none">TOP BOSS</span><span class="text-[10px] text-brand-gold font-bold uppercase">Moving LLC</span></div>
+                </a>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="services.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">Services</a>
+                    <a href="about.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">About</a>
+                    <a href="reviews.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">Reviews</a>
+                    <a href="contact.html" class="bg-brand-orange text-white px-6 py-2 rounded font-bold hover:bg-[#A5521C] transition uppercase text-sm tracking-widest shadow-lg">Get Quote</a>
+                </div>
+                <div class="md:hidden"><button id="mobile-menu-button" class="text-white p-2"><i data-lucide="menu" class="w-8 h-8"></i></button></div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-t border-white/10 p-4 space-y-4 shadow-xl">
+            <a href="services.html" class="block text-lg font-medium text-white">Services</a>
+            <a href="about.html" class="block text-lg font-medium text-white">About Us</a>
+            <a href="reviews.html" class="block text-lg font-medium text-white">Reviews</a>
+            <a href="contact.html" class="block text-lg font-medium text-brand-orange font-bold">Get Free Quote</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="py-24 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                <div id="about-team-img" class="w-full aspect-square rounded-2xl shadow-strong overflow-hidden image-placeholder"></div>
+                <div>
+                    <h2 class="text-4xl font-extrabold text-brand-navy uppercase tracking-tighter mb-8">Established 2018</h2>
+                    <p class="text-lg text-neutral-900 leading-relaxed mb-6 font-medium">Top Boss Moving LLC is more than just a labor service; we are a family dedicated to Southern Utah.</p>
+                    <p class="text-sm text-neutral-700 leading-relaxed mb-8">With over 6 years of experience and a license status of MSB24-000431, we bring a level of professional training and accountability that defines the "Top Boss" standard.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-brand-navy p-6 rounded-xl text-white">
+                            <p class="text-2xl font-extrabold text-brand-gold mb-1">125+</p>
+                            <p class="text-[10px] uppercase font-bold tracking-widest text-neutral-300">5-Star Reviews</p>
+                        </div>
+                        <div class="bg-brand-gold p-6 rounded-xl text-brand-navy">
+                            <p class="text-2xl font-extrabold mb-1">6+</p>
+                            <p class="text-[10px] uppercase font-bold tracking-widest opacity-80">Years in Business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Short version) -->
+    <footer class="bg-[#081624] text-neutral-400 pt-16 pb-8 border-t border-white/5 text-center text-[10px] uppercase tracking-widest font-bold">
+        <p>&copy; 2026 Top Boss Moving LLC. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if(btn) btn.onclick = (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); };
+        
+        const apiKey = ""; // Set your API key here
+        
+        // Re-declare function or load from external JS file
+        async function generateImage(prompt, elementId) {
+             const container = document.getElementById(elementId);
+             if (!container) return;
+             container.innerHTML = '<div class="loading-spinner"></div>';
+             try {
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ instances: [{ prompt: prompt }], parameters: { sampleCount: 1 } })
+                });
+                const data = await response.json();
+                if (data.predictions && data.predictions[0].bytesBase64Encoded) {
+                    const imageUrl = `data:image/png;base64,${data.predictions[0].bytesBase64Encoded}`;
+                    container.innerHTML = `<img src="${imageUrl}" class="w-full h-full object-cover" alt="Generated Image">`;
+                }
+             } catch (e) {}
+        }
+
+        window.onload = () => {
+             const brandIdentity = "Professional moving company, Top Boss Moving, movers wearing navy blue and orange uniforms with an orange star logo. High-end, commercial photography, sharp focus, sunny lighting.";
+             generateImage(`${brandIdentity} A candid, professional portrait of the Top Boss Moving crew standing together in front of their branded equipment. Friendly, approachable neighbors. St. George scenery.`, 'about-team-img');
+        };
+    </script>
+</body>
+</html>
