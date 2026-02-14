@@ -87,12 +87,34 @@
                     </div>
                 </div>
                 <div class="bg-brand-navy p-12 rounded-3xl shadow-strong border border-white/5">
-                    <form class="space-y-6">
-                        <input type="text" placeholder="YOUR NAME" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-                        <input type="tel" placeholder="PHONE NUMBER" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-                        <textarea rows="4" placeholder="MOVE DETAILS" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest"></textarea>
-                        <button class="w-full bg-brand-gold text-brand-navy py-5 rounded-xl font-extrabold uppercase tracking-[0.2em] hover:bg-white transition shadow-2xl">Request My Quote</button>
-                    </form>
+                    <form 
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="thank-you.html"
+  class="space-y-6"
+>
+    <!-- Honeypot field -->
+    <input type="text" name="bot-field" class="hidden">
+
+    <!-- Required Netlify form-name -->
+    <input type="hidden" name="form-name" value="contact">
+
+    <input type="text" name="name" placeholder="YOUR NAME" aria-label="Name"
+      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
+
+    <input type="tel" name="phone" placeholder="PHONE NUMBER" aria-label="Phone"
+      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
+
+    <textarea rows="4" name="details" placeholder="MOVE DETAILS (Date, Location, Items)" aria-label="Details"
+      class="w-full bg-white/5 border border-white/10 p-4 rounded-xl text-white outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest"></textarea>
+
+    <button type="submit"
+      class="w-full bg-brand-gold text-brand-navy py-5 rounded-xl font-extrabold uppercase tracking-[0.2em] hover:bg-white transition shadow-2xl">
+      Request My Quote
+    </button>
+</form>
                 </div>
             </div>
         </section>
