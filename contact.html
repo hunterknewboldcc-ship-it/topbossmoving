@@ -15,7 +15,7 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { navy: '#1A3D7C', gold: '#D4A037', orange: '#BC3908', cream: '#F7F3EC' },
+                        brand: { navy: '#4A2E1F', gold: '#D4A037', orange: '#D96F32', cream: '#F2EFEA', accent: '#C1440E' },
                         neutral: { 100: '#FFFFFF', 200: '#F7F3EB', 400: '#D3CEC4', 700: '#4C4C4C', 900: '#1A1A1A' }
                     },
                     boxShadow: { 'soft': '0 8px 20px rgba(15, 23, 42, 0.08)', 'strong': '0 16px 40px rgba(15, 23, 42, 0.14)' }
@@ -25,7 +25,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #F7F3EC; color: #1A1A1A; }
+        body { font-family: 'Inter', sans-serif; background-color: #F2EFEA; color: #1A1A1A; }
     </style>
 </head>
 <body class="text-neutral-900">
@@ -38,8 +38,8 @@
                     <div class="bg-brand-gold p-2 rounded-lg mr-2">
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="text-brand-navy w-6 h-6">
                         <path d="M5 3v14h2l2 4h2l-2-4h6l2 4h2l-2-4h2V3H5z" fill="#003049"/>
-                        <circle cx="10" cy="21" r="1.5" fill="#BC3908"/>
-                        <circle cx="18" cy="21" r="1.5" fill="#BC3908"/>
+                        <circle cx="10" cy="21" r="1.5" fill="#D96F32"/>
+                        <circle cx="18" cy="21" r="1.5" fill="#D96F32"/>
                       </svg>
                     </div>
                     <div>
@@ -96,27 +96,31 @@
                     </div>
                 </div>
                 <div class="bg-brand-navy p-12 rounded-3xl shadow-strong border border-white/5">
-                    <iframe
-                      id="JotFormIFrame-260446432956058"
-                      title="Contact Form"
-                      onload="window.parent.scrollTo(0,0)"
-                      allowtransparency="true"
-                      allow="geolocation; microphone; camera; fullscreen; payment"
-                      src="https://form.jotform.com/260446432956058"
-                      frameborder="0"
-                      style="min-width:100%;max-width:100%;height:539px;border:none;"
-                      scrolling="no"
-                    >
-                    </iframe>
-                    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                    <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260446432956058']", "https://form.jotform.com/")</script>
+                    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" class="space-y-4">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div>
+                            <label class="block text-white text-sm mb-2">Name</label>
+                            <input type="text" name="name" class="w-full p-3 rounded bg-white/10 text-white border border-white/20" required>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm mb-2">Email</label>
+                            <input type="email" name="email" class="w-full p-3 rounded bg-white/10 text-white border border-white/20" required>
+                        </div>
+                        <div>
+                            <label class="block text-white text-sm mb-2">Message</label>
+                            <textarea name="message" class="w-full p-3 rounded bg-white/10 text-white border border-white/20 h-32" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-gold text-brand-navy font-bold py-3 rounded uppercase tracking-widest hover:bg-white transition">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-[#081624] text-neutral-400 pt-16 pb-8 border-t border-white/5">
+    <footer class="bg-brand-navy text-neutral-400 pt-16 pb-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-12">
             <div>
                 <h3 class="text-white font-bold text-xl mb-4 uppercase tracking-widest">Top Boss Moving</h3>

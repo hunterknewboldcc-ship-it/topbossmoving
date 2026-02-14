@@ -7,8 +7,8 @@
     <meta name="description" content="Read genuine 5-star reviews from satisfied customers in St. George, Utah. Top Boss Moving offers professional, reliable moving services across Southern Utah, Las Vegas, and Phoenix.">
     <!-- TAILWIND & LUCIDE -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#1A3D7C', gold: '#D4A037', orange: '#BC3908', cream: '#F7F3EC' }, neutral: { 900: '#1A1A1A' } }, boxShadow: { 'soft': '0 8px 20px rgba(15, 23, 42, 0.08)' } } } }</script>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap'); body { font-family: 'Inter', sans-serif; background-color: #F7F3EC; color: #1A1A1A; }</style>
+    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#4A2E1F', gold: '#D4A037', orange: '#D96F32', cream: '#F2EFEA', accent: '#C1440E' }, neutral: { 900: '#1A1A1A' } }, boxShadow: { 'soft': '0 8px 20px rgba(15, 23, 42, 0.08)' } } } }</script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap'); body { font-family: 'Inter', sans-serif; background-color: #F2EFEA; color: #1A1A1A; }</style>
 </head>
 <body class="text-neutral-900 flex flex-col min-h-screen">
 
@@ -20,8 +20,8 @@
                   <div class="bg-brand-gold p-2 rounded-lg mr-2">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="text-brand-navy w-6 h-6">
                       <path d="M5 3v14h2l2 4h2l-2-4h6l2 4h2l-2-4h2V3H5z" fill="#003049"/>
-                      <circle cx="10" cy="21" r="1.5" fill="#BC3908"/>
-                      <circle cx="18" cy="21" r="1.5" fill="#BC3908"/>
+                      <circle cx="10" cy="21" r="1.5" fill="#D96F32"/>
+                      <circle cx="18" cy="21" r="1.5" fill="#D96F32"/>
                     </svg>
                   </div>
                   <div><span class="text-xl font-bold text-white block leading-none">TOP BOSS</span><span class="text-[10px] text-brand-gold font-bold uppercase">Moving LLC</span></div>
@@ -261,60 +261,10 @@
                 </div>
             </section>
 
-            <!-- REVIEW SUBMISSION FORM -->
-            <section class="py-16 bg-brand-cream rounded-2xl mt-16 border border-brand-gold/20">
-                <div class="max-w-2xl mx-auto px-4">
-                    <h3 class="text-3xl font-extrabold text-brand-navy text-center mb-12 uppercase tracking-tighter">Share Your Experience</h3>
-
-                    <form
-                        name="review"
-                        method="POST"
-                        data-netlify="true"
-                        action="thank-you.html"
-                        class="space-y-6"
-                    >
-                        <input type="hidden" name="form-name" value="review">
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="name" placeholder="YOUR NAME" aria-label="Your Name"
-                                class="w-full bg-white border border-white/10 p-4 rounded-xl text-brand-navy outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-
-                            <input type="email" name="email" placeholder="EMAIL ADDRESS" aria-label="Email Address"
-                                class="w-full bg-white border border-white/10 p-4 rounded-xl text-brand-navy outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-bold text-brand-navy uppercase tracking-widest mb-2">Rating</label>
-                            <div class="flex space-x-2">
-                                <label class="inline-flex items-center">
-                                    <input type="radio" name="rating" value="5" class="text-brand-gold focus:ring-brand-gold">
-                                    <span class="ml-2 text-2xl">⭐⭐⭐⭐⭐</span>
-                                </label>
-                                <label class="inline-flex items-center ml-4">
-                                    <input type="radio" name="rating" value="4" class="text-brand-gold focus:ring-brand-gold">
-                                    <span class="ml-2 text-2xl">⭐⭐⭐⭐</span>
-                                </label>
-                                <label class="inline-flex items-center ml-4">
-                                    <input type="radio" name="rating" value="3" class="text-brand-gold focus:ring-brand-gold">
-                                    <span class="ml-2 text-2xl">⭐⭐⭐</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <textarea rows="4" name="review" placeholder="YOUR REVIEW" aria-label="Your Review"
-                            class="w-full bg-white border border-white/10 p-4 rounded-xl text-brand-navy outline-none focus:border-brand-gold transition uppercase text-xs font-bold tracking-widest"></textarea>
-
-                        <button type="submit"
-                            class="w-full bg-brand-navy text-brand-gold py-5 rounded-xl font-extrabold uppercase tracking-[0.2em] hover:bg-brand-gold hover:text-brand-navy transition shadow-2xl">
-                            Submit Review
-                        </button>
-                    </form>
-                </div>
-            </section>
         </section>
     </main>
 
-    <footer class="bg-[#081624] text-neutral-400 pt-16 pb-8 border-t border-white/5 text-center text-[10px] uppercase tracking-widest font-bold"><p>&copy; 2026 Top Boss Moving LLC. All Rights Reserved.</p></footer>
+    <footer class="bg-brand-navy text-neutral-400 pt-16 pb-8 border-t border-white/5 text-center text-[10px] uppercase tracking-widest font-bold"><p>&copy; 2026 Top Boss Moving LLC. All Rights Reserved.</p></footer>
     <script>const btn=document.getElementById('mobile-menu-button');const menu=document.getElementById('mobile-menu');btn.onclick=(e)=>{e.stopPropagation();menu.classList.toggle('hidden');};document.addEventListener('click',()=>{if(menu)menu.classList.add('hidden');});</script>
 </body>
 </html>
