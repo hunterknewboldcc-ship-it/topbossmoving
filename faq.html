@@ -5,29 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frequently Asked Questions | Top Boss Moving St. George</title>
     <meta name="description" content="Find answers to common questions about booking, pricing, services, and moving day preparation with Top Boss Moving in St. George, Utah.">
-    <!-- TAILWIND & LUCIDE -->
+    
+    <!-- Include Tailwind & Lucide -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { brand: { navy: '#0B2338', gold: '#C89A3A', orange: '#C86A26', cream: '#F5F0E6' }, neutral: { 900: '#1F2430' } }, boxShadow: { 'strong': '0 16px 40px rgba(15, 23, 42, 0.14)' } } } }</script>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap'); body { font-family: 'Inter', sans-serif; background-color: #F5F0E6; color: #1F2430; } details > summary { list-style: none; } details > summary::-webkit-details-marker { display: none; } details[open] summary ~ * { animation: sweep .3s ease-in-out; } @keyframes sweep { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } } details[open] .icon-chevron { transform: rotate(180deg); }</style>
+    
+    <!-- Config & Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { navy: '#0B2338', gold: '#C89A3A', orange: '#C86A26', cream: '#F5F0E6' },
+                        neutral: { 100: '#FFFFFF', 200: '#F7F3EB', 400: '#D3CEC4', 700: '#4C4C4C', 900: '#1F2430' }
+                    },
+                    boxShadow: { 'soft': '0 8px 20px rgba(15, 23, 42, 0.08)', 'strong': '0 16px 40px rgba(15, 23, 42, 0.14)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F5F0E6; color: #1F2430; }
+        
+        /* Custom Accordion Styles */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        @keyframes sweep { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } }
+        details[open] .icon-chevron { transform: rotate(180deg); }
+    </style>
 </head>
-<body class="text-neutral-900 flex flex-col min-h-screen">
+<body class="text-neutral-900">
 
-    <!-- NAV (Active: FAQ) -->
+    <!-- NAVIGATION -->
     <nav class="sticky top-0 z-50 bg-brand-navy shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <a href="index.html" class="flex items-center"><div class="bg-brand-gold p-2 rounded-lg mr-2"><i data-lucide="truck" class="text-brand-navy w-6 h-6"></i></div><div><span class="text-xl font-bold text-white block leading-none">TOP BOSS</span><span class="text-[10px] text-brand-gold font-bold uppercase">Moving LLC</span></div></a>
+                <a href="index.html" class="flex items-center cursor-pointer">
+                    <div class="bg-brand-gold p-2 rounded-lg mr-2">
+                        <i data-lucide="truck" class="text-brand-navy w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-white block leading-none tracking-tight">TOP BOSS</span>
+                        <span class="text-[10px] tracking-[0.3em] text-brand-gold font-bold uppercase">Moving LLC</span>
+                    </div>
+                </a>
+                
                 <div class="hidden md:flex space-x-6 items-center">
                     <a href="services.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">Services</a>
                     <a href="about.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">About</a>
-                    <a href="faq.html" class="text-brand-gold border-b-2 border-brand-gold font-medium text-sm uppercase tracking-widest">FAQ</a>
+                    <a href="faq.html" class="text-brand-gold font-medium text-sm uppercase tracking-widest border-b-2 border-brand-gold">FAQ</a>
                     <a href="reviews.html" class="text-white hover:text-brand-gold transition font-medium text-sm uppercase tracking-widest">Reviews</a>
                     <a href="contact.html" class="bg-brand-orange text-white px-6 py-2 rounded font-bold hover:bg-[#A5521C] transition uppercase text-sm tracking-widest shadow-lg">Get Quote</a>
                 </div>
-                <div class="md:hidden"><button id="mobile-menu-button" class="text-white p-2"><i data-lucide="menu" class="w-8 h-8"></i></button></div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white p-2">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-t border-white/10 p-4 space-y-4 shadow-xl">
             <a href="services.html" class="block text-lg font-medium text-white">Services</a>
             <a href="about.html" class="block text-lg font-medium text-white">About Us</a>
@@ -37,45 +78,235 @@
         </div>
     </nav>
 
-    <main class="flex-grow py-16 bg-white">
+    <!-- HEADER -->
+    <header class="bg-brand-navy py-16 text-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="relative z-10 px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-4">Common Questions</h1>
+            <p class="text-neutral-400 max-w-xl mx-auto">Everything you need to know about booking your move with St. George's most trusted team.</p>
+        </div>
+    </header>
+
+    <!-- FAQ CONTENT -->
+    <main class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-4xl font-extrabold text-brand-navy uppercase tracking-tighter mb-12 text-center">Common Questions</h1>
             
             <!-- Category: Booking & Scheduling -->
             <div class="mb-12">
-                <div class="flex items-center mb-6 border-b border-gray-200 pb-2"><i data-lucide="calendar-check" class="text-brand-orange w-6 h-6 mr-3"></i><h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Booking & Scheduling</h2></div>
+                <div class="flex items-center mb-6 border-b border-gray-200 pb-2">
+                    <i data-lucide="calendar-check" class="text-brand-orange w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Booking & Scheduling</h2>
+                </div>
                 <div class="space-y-4">
-                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer"><summary class="flex justify-between items-center font-bold text-brand-navy">How do I book a move?<i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i></summary><p class="mt-4 text-sm text-neutral-700 leading-relaxed">Call (435) 862-0699 or fill out our "Get Quote" form. We recommend calling for the fastest response.</p></details>
-                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer"><summary class="flex justify-between items-center font-bold text-brand-navy">How much notice do you need?<i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i></summary><p class="mt-4 text-sm text-neutral-700 leading-relaxed">We recommend 2-4 weeks, but we try to accommodate last-minute moves when possible.</p></details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            How do I book a move?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">You can book by calling us directly at (435) 862-0699 or by filling out the "Get Quote" form on our website. We recommend calling for the fastest response.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            How much notice do you need?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We recommend booking 2-4 weeks in advance, especially for weekends or end-of-month dates. However, we do our best to accommodate last-minute requests when our schedule permits.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What is your cancellation policy?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We understand plans change. Please notify us at least 48 hours in advance to cancel or reschedule without a penalty. Cancellations within 48 hours may be subject to a deposit forfeiture.</p>
+                    </details>
                 </div>
             </div>
 
-            <!-- Category: Pricing -->
+            <!-- Category: Pricing & Payment -->
             <div class="mb-12">
-                <div class="flex items-center mb-6 border-b border-gray-200 pb-2"><i data-lucide="credit-card" class="text-brand-orange w-6 h-6 mr-3"></i><h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Pricing & Payment</h2></div>
+                <div class="flex items-center mb-6 border-b border-gray-200 pb-2">
+                    <i data-lucide="credit-card" class="text-brand-orange w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Pricing & Payment</h2>
+                </div>
                 <div class="space-y-4">
-                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer"><summary class="flex justify-between items-center font-bold text-brand-navy">How are rates structured?<i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i></summary><p class="mt-4 text-sm text-neutral-700 leading-relaxed">Hourly rates for local moves ($105 - $150/hr) and flat rates for long distance. Clock starts at your door.</p></details>
-                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer"><summary class="flex justify-between items-center font-bold text-brand-navy">Payment methods?<i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i></summary><p class="mt-4 text-sm text-neutral-700 leading-relaxed">Cash, Credit Cards (Visa, Mastercard, Amex), and Venmo due upon completion.</p></details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            How are your rates structured?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We offer hourly rates for local moves ($105 - $150/hr depending on crew size) and flat rates for long-distance moves. The clock starts when we arrive at your door and stops when the job is done.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What payment methods do you accept?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We accept Cash, Credit Cards (Visa, Mastercard, Amex), and Venmo. Payment is due upon completion of the move.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            Is a deposit required?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">Yes, a small deposit is required to secure your date on our calendar. This deposit is credited toward your final bill.</p>
+                    </details>
                 </div>
             </div>
-            
+
             <!-- Category: Services -->
             <div class="mb-12">
-                <div class="flex items-center mb-6 border-b border-gray-200 pb-2"><i data-lucide="package-check" class="text-brand-orange w-6 h-6 mr-3"></i><h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Services</h2></div>
+                <div class="flex items-center mb-6 border-b border-gray-200 pb-2">
+                    <i data-lucide="package-check" class="text-brand-orange w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Services & Equipment</h2>
+                </div>
                 <div class="space-y-4">
-                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer"><summary class="flex justify-between items-center font-bold text-brand-navy">Do you move pianos?<i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i></summary><p class="mt-4 text-sm text-neutral-700 leading-relaxed">Yes! We move upright pianos and gun safes up to 600lbs using specialized equipment.</p></details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What equipment do you provide?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We come fully equipped with hand trucks, furniture dollies, thick moving blankets, shrink wrap, tape, and tools for assembly/disassembly. This is included in our service.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            Do you move specialty items like pianos or safes?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">Yes! We are trained and equipped to move upright pianos, gun safes (up to 600 lbs), and antiques. Please mention these items when booking so we bring the correct heavy-duty equipment.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What items will you NOT move?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">For safety and legal reasons, we cannot transport hazardous materials (gasoline, paint, chemicals), firearms/ammunition, or live pets/plants.</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Category: Service Area -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6 border-b border-gray-200 pb-2">
+                    <i data-lucide="map-pin" class="text-brand-orange w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Service Area</h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What areas do you cover?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">Our primary local area includes St. George, Washington, Hurricane, Santa Clara, and Ivins. We also perform long-distance moves to Las Vegas, Salt Lake City, and Phoenix.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            Are there travel fees?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">For local moves within Washington County, there are typically no travel fees. For locations outside our standard radius, a travel fee may apply based on mileage.</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Category: Day of Move -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6 border-b border-gray-200 pb-2">
+                    <i data-lucide="clock" class="text-brand-orange w-6 h-6 mr-3"></i>
+                    <h2 class="text-2xl font-bold text-brand-navy uppercase tracking-tight">Day-of-Move</h2>
+                </div>
+                <div class="space-y-4">
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            How should I prepare for the movers?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">Please ensure small items are packed in boxes and taped shut. Clear walkways of tripping hazards. Secure pets in a safe room or crate. If you need us to pack for you, please arrange this in advance.</p>
+                    </details>
+                    <details class="group bg-brand-cream rounded-lg p-4 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-brand-navy">
+                            What if it rains or snows?
+                            <i data-lucide="chevron-down" class="icon-chevron w-5 h-5 text-brand-gold transition-transform duration-300"></i>
+                        </summary>
+                        <p class="mt-4 text-sm text-neutral-700 leading-relaxed">We move rain or shine! We use extra floor runners and coverings to protect your home and belongings. In severe weather events (blizzards/ice) that pose a safety risk, we will contact you to reschedule.</p>
+                    </details>
                 </div>
             </div>
 
             <!-- CTA -->
-            <div class="bg-brand-navy rounded-2xl p-8 text-center text-white shadow-strong">
+            <div class="bg-brand-navy rounded-2xl p-8 md:p-12 text-center text-white shadow-strong">
                 <h3 class="text-2xl font-bold uppercase mb-4">Still have questions?</h3>
-                <a href="contact.html" class="inline-block bg-brand-gold text-brand-navy px-8 py-3 rounded font-bold uppercase tracking-widest hover:bg-white transition">Contact Us</a>
+                <p class="text-neutral-400 mb-8">We are happy to answer any other questions you might have. Give us a call!</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="tel:4358620699" class="bg-brand-gold text-brand-navy px-8 py-3 rounded font-bold uppercase tracking-widest hover:bg-white transition flex items-center justify-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-2"></i> (435) 862-0699
+                    </a>
+                    <a href="contact.html" class="bg-transparent border border-white text-white px-8 py-3 rounded font-bold uppercase tracking-widest hover:bg-white hover:text-brand-navy transition">
+                        Contact Online
+                    </a>
+                </div>
             </div>
+
         </div>
     </main>
 
-    <footer class="bg-[#081624] text-neutral-400 pt-16 pb-8 border-t border-white/5 text-center text-[10px] uppercase tracking-widest font-bold"><p>&copy; 2026 Top Boss Moving LLC. All Rights Reserved.</p></footer>
-    <script>lucide.createIcons(); const btn=document.getElementById('mobile-menu-button');const menu=document.getElementById('mobile-menu');btn.onclick=(e)=>{e.stopPropagation();menu.classList.toggle('hidden');};document.addEventListener('click',()=>{if(menu)menu.classList.add('hidden');});</script>
+    <!-- FOOTER -->
+    <footer class="bg-[#081624] text-neutral-400 pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-12">
+            <div>
+                <h3 class="text-white font-bold text-xl mb-4 uppercase tracking-widest">Top Boss Moving</h3>
+                <p class="mb-4 text-sm leading-relaxed">Family-owned and professionally trained. St. George's most trusted partner for stress-free transitions since 2018.</p>
+                <div class="mt-4 p-3 bg-brand-navy rounded border border-white/5 inline-block">
+                    <p class="text-[10px] text-brand-gold font-bold tracking-widest uppercase">Est. 2018 | License MSB24-000431</p>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-sm">Navigation</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="services.html" class="hover:text-brand-gold transition">Our Services</a></li>
+                    <li><a href="about.html" class="hover:text-brand-gold transition">About the Team</a></li>
+                    <li><a href="faq.html" class="hover:text-brand-gold transition">FAQ</a></li>
+                    <li><a href="reviews.html" class="hover:text-brand-gold transition">Customer Reviews</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-gold transition">Get Free Quote</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-sm">Service Areas</h4>
+                <ul class="space-y-2 text-sm">
+                    <li>St. George, UT</li>
+                    <li>Washington & Hurricane</li>
+                    <li>Las Vegas, NV</li>
+                    <li>Phoenix, AZ</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-sm">Contact</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-2 text-brand-gold"></i> (435) 862-0699</li>
+                    <li class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 text-brand-gold"></i> topbossmoving@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-16 pt-8 border-t border-white/5 text-center text-[10px] uppercase tracking-widest font-bold">
+            <p>&copy; 2026 Top Boss Moving LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.onclick = (e) => {
+                e.stopPropagation();
+                menu.classList.toggle('hidden');
+            };
+        }
+        document.addEventListener('click', () => {
+            if (menu) menu.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
